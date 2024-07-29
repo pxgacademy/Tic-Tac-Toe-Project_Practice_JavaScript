@@ -8,22 +8,32 @@
   </head>
   <body>
     <main>
-      <h1>Tic Tac Toe</h1>
-      <div class="game_container">
-        <div class="game">
-          <button class="box box1"></button>
-          <button class="box box2"></button>
-          <button class="box box3"></button>
-          <button class="box box4"></button>
-          <button class="box box5"></button>
-          <button class="box box6"></button>
-          <button class="box box7"></button>
-          <button class="box box8"></button>
-          <button class="box box9"></button>
+        <div>
+            <h1 id="game_title">Tic Tac Toe</h1>
+            <div class="game_container">
+              <div class="game">
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+              </div>
+            </div>
+            <button id="reset">Reset</button>
+            <button class="quit">Quit</button>
         </div>
-      </div>
-      <button id="reset">Reset</button>
-      <button id="quit">Quit</button>
+        <div id="winner_container">
+            <h2 id="winner_title">
+              Congratulations! <br />
+              winner is O
+            </h2>
+            <button id="new_game">New Game</button>
+            <button class="quit">Quit</button>
+          </div>
     </main>
     <!-- JavaScript -->
     <script src="./js/script.js"></script>

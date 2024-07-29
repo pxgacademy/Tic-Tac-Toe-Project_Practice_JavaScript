@@ -13,7 +13,14 @@ body {
   height: 100vh;
 }
 
-h1 {
+main{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game_title {
   font-size: 3rem;
   color: blueviolet;
   font-weight: 700;
@@ -21,6 +28,22 @@ h1 {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   width: 510px;
   margin: 0 auto;
+}
+#winner_container {
+  padding: 30px;
+  border-radius: 1rem;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+#winner_title {
+  font-size: 3rem;
+  color: yellow;
+  margin-bottom: 30px;
 }
 
 .game_container {
@@ -32,6 +55,7 @@ h1 {
   margin-top: 30px;
   background-color: blueviolet;
   border-radius: 1rem;
+  display: ;
 }
 
 .game {
@@ -44,23 +68,25 @@ h1 {
 }
 
 .box {
+  background-color: #f0f0f0;
   width: 150px;
   height: 150px;
   border: none;
   border-radius: 1rem;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  color: #000000cc;
   font-size: 6rem;
   font-weight: 600;
   transition: 0.4s;
 }
 
 .box:hover {
-  background-color: brown;
-  color: #fff;
+  background-color: rgb(183, 214, 255);
 }
 
 #reset,
-#quit {
+.quit,
+#new_game {
   margin-top: 20px;
   width: 200px;
   height: 50px;
@@ -72,10 +98,14 @@ h1 {
   border-radius: 0.5rem;
   transition: 0.3s;
 }
+
+#new_game:hover {
+  background-color: green;
+}
 #reset:hover {
   background-color: green;
 }
 
-#quit:hover {
+.quit:hover {
   background-color: red;
 }
