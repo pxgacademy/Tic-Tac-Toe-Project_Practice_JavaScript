@@ -7,6 +7,7 @@ let displayHide = document.querySelector("#display");
 let winnerTitle = document.querySelector("#winner_title");
 
 let turn = true;
+let count = 0; //to check draw
 
 const winnerPatterns = [
   [0, 1, 2],
@@ -22,6 +23,7 @@ const winnerPatterns = [
 const resetGame = () => {
   turn = true;
   enableBoxes();
+  count = 0;
   winnerContainer.style.display = "none";
 };
 
@@ -44,7 +46,14 @@ const enableBoxes = () => {
 };
 
 const showWinner = (winner) => {
-  winnerTitle.innerText = `Congratulations! \n Winner is ${winner}`;
+  winnerTitle.innerText = `Congratulations!\nWinner is ${winner}`;
+  winnerContainer.style.display = "block";
+  disableBoxes();
+  resetBtn.disabled = true;
+};
+
+const showDraw = () => {
+  winnerTitle.innerText = `Ops!\ngame was daw`;
   winnerContainer.style.display = "block";
   disableBoxes();
   resetBtn.disabled = true;
@@ -65,6 +74,7 @@ const checkWinner = () => {
         boxes[pattern[1]].style.color = "red";
         boxes[pattern[2]].style.color = "red";
         showWinner(position1Value);
+        return true;
       }
     }
   }
@@ -74,6 +84,7 @@ boxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (turn) {
       box.innerText = "O";
+      box.style.color = "blue";
       turn = false;
     } else {
       box.innerText = "X";
@@ -81,5 +92,13 @@ boxes.forEach((box) => {
     }
     box.disabled = true;
     checkWinner();
+
+    count++;
+
+    let isWinner = checkWinner();
+
+    if (count === 9 && !isWinner) {
+      showDraw();
+    }
   });
 });
